@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /faturamento/
+  
+  # Não reescreve /public/
+  RewriteCond %{REQUEST_URI} ^/faturamento/public/
+  RewriteRule ^ - [L]
+  
+  # Redireciona /faturamento/ para /faturamento/public/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

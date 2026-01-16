@@ -1,0 +1,23 @@
+# Dependências
+vendor/
+composer.lock
+
+# Arquivos temporários
+storage/*
+!storage/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Sistema
+.env
+.env.local
+*.log
+
+# Cache
+.cache/

@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /faturamento/public/
+  
+  # Não reescreve arquivos e diretórios reais
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Reescreve tudo para index.php com parâmetro url
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
